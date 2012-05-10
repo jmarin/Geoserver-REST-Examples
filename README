@@ -4,10 +4,63 @@ Global Settings
 
 GET
 
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/settings.xml
+
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/settings.json
 
 PUT
+
+curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d@'settings/globalSettings.xml' http://localhost:8080/geoserver/rest/settings
+
+DELETE
+
+curl -u admin:geoserver -XDELETE -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/settings
+
+
+Global Contact
+
+GET
+
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/settings/contact.xml
+
+PUT
+
+curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d@'contact/globalContact.xml' http://localhost:8080/geoserver/rest/settings/contact.xml
 
 
 DELETE
 
+curl -u admin:geoserver -XDELETE -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/settings/contact.xml
 
+
+
+Global WMS
+
+GET
+
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/services/wms/settings.xml
+
+PUT
+
+curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d@'services/wms/GlobalWMS.xml'  http://localhost:8080/geoserver/rest/services/wms/settings
+
+
+Global WFS
+
+GET
+
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml'  http://localhost:8080/geoserver/rest/services/wfs/settings.xml
+
+PUT
+
+curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d@'services/wfs/GlobalWFS.xml'  http://localhost:8080/geoserver/rest/services/wfs/settings
+
+Global WCS
+
+GET
+
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/services/wcs/settings.xml
+
+PUT
+
+curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d@'services/wcs/GlobalWCS.xml'  http://localhost:8080/geoserver/rest/services/wcs/settings
