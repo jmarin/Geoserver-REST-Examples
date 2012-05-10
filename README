@@ -64,3 +64,62 @@ curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/
 PUT
 
 curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d@'services/wcs/GlobalWCS.xml'  http://localhost:8080/geoserver/rest/services/wcs/settings
+
+
+Local WMS
+
+GET
+
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/services/wms/LocalWorkspace/settings.xml
+
+POST
+
+curl -u admin:geoserver -XPOST -H 'Content-type: text/xml' -d@'services/wms/LocalWMS.xml'  http://localhost:8080/geoserver/rest/services/wms/LocalWorkspace/settings
+
+PUT
+
+curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d'<wmsinfo><workspace><name>LocalWorkspace</name></workspace><enabled>false</enabled></wmsinfo>'  http://localhost:8080/geoserver/rest/services/wms/LocalWorkspace/settings
+
+DELETE
+
+curl -u admin:geoserver -XDELETE -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/services/wms/LocalWorkspace/settings
+
+
+Local WFS
+
+GET
+
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/services/wfs/LocalWorkspace/settings.xml
+
+POST
+
+curl -u admin:geoserver -XPOST -H 'Content-type: text/xml' -d@'services/wfs/LocalWFS.xml'  http://localhost:8080/geoserver/rest/services/wfs/LocalWorkspace/settings
+
+PUT
+
+curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d'<wfsinfo><workspace><name>LocalWorkspace</name></workspace><enabled>false</enabled></wfsinfo>'  http://localhost:8080/geoserver/rest/services/wfs/LocalWorkspace/settings
+
+DELETE
+
+curl -u admin:geoserver -XDELETE -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/services/wfs/LocalWorkspace/settings
+
+
+Local WCS
+
+GET
+
+curl -u admin:geoserver -XGET -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/services/wcs/LocalWorkspace/settings.xml
+
+POST
+
+curl -u admin:geoserver -XPOST -H 'Content-type: text/xml' -d@'services/wcs/LocalWCS.xml'  http://localhost:8080/geoserver/rest/services/wcs/LocalWorkspace/settings
+
+PUT
+
+curl -u admin:geoserver -XPUT -H 'Content-type: text/xml' -d'<wcsinfo><workspace><name>LocalWorkspace</name></workspace><enabled>false</enabled></wcsinfo>'  http://localhost:8080/geoserver/rest/services/wcs/LocalWorkspace/settings
+
+DELETE
+
+curl -u admin:geoserver -XDELETE -H 'Content-type: text/xml' http://localhost:8080/geoserver/rest/services/wcs/LocalWorkspace/settings
+
+
